@@ -1,3 +1,23 @@
+provider "aws" {
+  region = "ap-southeast-1"
+}
+
+# Lấy AMI miễn phí mới nhất của Amazon Linux 2
+data "aws_ami" "amazon_linux_free_tier" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
 # Tạo key pair mới với tên động
 resource "aws_key_pair" "dynamic_key" {
   key_name   = "${var.project_name}-${var.key_pair_name}-${formatdate("YYYYMMDD-hhmmss", timestamp())}"

@@ -1,5 +1,6 @@
-.terraform/
+
 *.tfstate
 *.tfstate.*
-.terrform.lock.hcl
-day1/.terrform.lock.hcl
+*.terraform/
+*.terrform.lock.hcl
+

@@ -23,3 +23,10 @@ terraform init
 terraform plan  
 terraform apply  
 terraform destroy
+
+------
+# day1
+terraform apply
+
+# day2
+terraform apply -var="environment=staging" -var="project_name=web-app"

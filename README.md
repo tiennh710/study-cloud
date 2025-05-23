@@ -8,20 +8,25 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 sudo yum -y install terraform  
 terraform -version  
 
-# Cài đặt docker
+# Install Docker
 sudo amazon-linux-extras enable docker  
 sudo yum install -y docker  
 docket -version  
 
-# Bắt đầu Docker daemon
+# Start Docker daemon
 sudo systemctl start docker  
 sudo systemctl enable docker  
 sudo systemctl status docker  
 
-# Start terraform
-terraform init  
+# Docker's command
+docker ps
+
+# Terraform's command
+terraform init
+terrafor validate
 terraform plan  
-terraform apply  
+terraform apply
+terraform apply -auto-approve
 terraform destroy
 
 ------

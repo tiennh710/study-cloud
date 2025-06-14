@@ -36,4 +36,3 @@ terraform apply
 # day2
 terraform apply -var="environment=staging" -var="project_name=web-app"
 
-# for achivements
